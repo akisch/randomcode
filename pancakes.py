@@ -8,12 +8,15 @@ def flip(stack) :
         return list(reversed(stack))
 
 def s(p) :
+        #base case
         if len(p) == 1 :
                 return p
         biggest = max(p)
         biggest_ind = p.index(biggest)
+        #if biggest pancake is not on bottom, perform two flips so it is
         if biggest_ind != 0 :
                 p = flip(p[:biggest_ind]+flip(p[biggest_ind:]))
+        #recurse on the rest of the stack
         return [p[0]]+s(p[1:])
 
 s(p)
