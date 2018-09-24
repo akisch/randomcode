@@ -15,3 +15,6 @@ def s(p) :
         if biggest_ind != 0 :
                 p = flip(p[:biggest_ind]+flip(p[biggest_ind:]))
         return [p[0]]+s(p[1:])
+
+s(p)
+print "Sorted p using "+str(flips)+" flips."
